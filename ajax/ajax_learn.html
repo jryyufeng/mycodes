@@ -20,7 +20,7 @@ function loadXMLDoc()
 	}
 	//open函数发送请求 （请求类型，请求目录，刷新方式选择）
 	xmlhttp.open("GET","/try/ajax/ajax_info.txt",true);
-	//服务端发回响应
+	//向服务端发送
 	xmlhttp.send();
 	//刷新函数
 	xmlhttp.onreadystatechange=function()
