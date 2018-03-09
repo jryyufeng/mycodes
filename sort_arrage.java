@@ -1,3 +1,4 @@
+//选快希堆不稳，堆归选基不变
 // 堆排序时间复杂度分析http://blog.csdn.net/yuzhihui_no1/article/details/44258297
 //新建堆O（n） 调整堆一趟为O(logN)
 import java.util.*;
