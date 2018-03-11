@@ -4,7 +4,7 @@
 import java.util.*;
 public class try11 {
     static class sort1 {
-        //O(n2)稳定
+        //冒泡排序O(n2)稳定，空间复杂度O（1）
         public void mopao(int array[]){
             int temp;
             for(int i=0;i<array.length-1;i++){
@@ -17,7 +17,7 @@ public class try11 {
                 }
             }
         }
-    //O(n2) 不稳定
+    //O(n2) 不稳定，选择排序，空间复杂度O（1）
         public int[] choose_sort(int arr[]){
             int min,temp;
             for(int i=0;i<arr.length-1;i++){
@@ -36,8 +36,8 @@ public class try11 {
             }
             return arr ;
         }
-        //O(n2)稳定 前n-1排好序，往前插入 数据基本有序时排序高效
-        public int[] insert_sort(int arr[]){
+        //插入排序O(n2)稳定 前n-1排好序，往前插入 数据基本有序时排序高效,空间复杂度O（n）
+         public int[] insert_sort(int arr[]){
             int temp;
             for(int i=0;i<arr.length-1;i++){
                 for(int j=i+1;j>0;j--){
@@ -56,7 +56,7 @@ public class try11 {
         }
         //希尔排序，又叫缩小增量排序，选择一定的步长把序列分成几部分，对每个序列进行插入排序
         //完成后步长递减，最后会对整个序列进行一次插入排序，此时整个序列基本有序
-        //不稳定排序
+        //空间复杂度O（1），不稳定排序
         //与插入排序最直观区别：插入排序步长一直为1，希尔排序则是先设定步长来处理
         //三层循环，最外层用来根据步长划分部分
         public int[] shell_sort(int[] arr){
@@ -89,7 +89,7 @@ public class try11 {
         //1.先从数列中取出来一个数最为key值
         //2.将比这个数小的数全部放在它的左边，大于或等于的数全部放在右边
         //3.对左右两个小数列重复第二步直到各区间只有1个数
-        //O(Nlog(N)),不稳定
+        //O(Nlog(N)),不稳定，空间复杂度O（nlogn）
         public int par1(int arr[],int l,int r){
             int key=arr[l];//初始化
             while(l<r){
@@ -124,6 +124,7 @@ public class try11 {
         //分小组，每个小组内有序，然后合并有序
         //这样通过先递归的分解数列，再合并数列就完成了归并排序
         //小组由小到大
+       //空间复杂度O（1）
         public static void merge(int[] a, int low, int mid, int high) {
             int[] temp = new int[high - low + 1];
             int i = low;// 左指针
@@ -136,7 +137,7 @@ public class try11 {
                 } else {
                     temp[k++] = a[j++];
                 }
-            }
+         }
             // 把左边剩余的数移入数组
             while (i <= mid) {
                 temp[k++] = a[i++];
@@ -144,8 +145,7 @@ public class try11 {
             // 把右边边剩余的数移入数组
             while (j <= high) {
                 temp[k++] = a[j++];
-            }
-            // 把新数组中的数覆盖nums数组
+            }            // 把新数组中的数覆盖nums数组
             for (int k2 = 0; k2 < temp.length; k2++) {
                 a[k2 + low] = temp[k2];
             }
@@ -155,8 +155,7 @@ public class try11 {
             int mid = (low + high) / 2;
             if (low < high) {
                 // 左边
-                mergeSort(a, low, mid);
-                // 右边
+                mergeSort(a, low, mid);                // 右边
                 mergeSort(a, mid + 1, high);
                 // 左右归并
                 merge(a, low, mid, high);
@@ -164,7 +163,7 @@ public class try11 {
             }
 
         }
-        //堆排序，堆排序是一种选择排序 O(N*log(N))
+        //堆排序，O堆排序是一种选择排序 O(N*log(N)) 
         //堆是具有以下性质的完全二叉树：每个结点的值都大于或等于其左右孩子结点的值，称为大顶堆；
         //或者每个结点的值都小于或等于其左右孩子结点的值，称为小顶堆。
         //大顶堆：arr[i] >= arr[2i+1] && arr[i] >= arr[2i+2]
@@ -174,6 +173,7 @@ public class try11 {
        // 将其与末尾元素进行交换，此时末尾就为最大值。
         //然后将剩余n-1个元素重新构造成一个堆，这样会得到n个元素的次小值。
         //如此反复执行，便能得到一个有序序列了
+      
         public void d_sort(int arr[]){
             //1.构建大顶堆
             for(int i=arr.length-1;i>0;i--){
@@ -219,6 +219,7 @@ public class try11 {
         //2.以个位数为关键字链到相应的链表值之后
         //3.从0开始遍历链表，以十位数为关键字调整相应的链
         //4.从0开始输出链表值之后的数据即为排序完成数据
+        //空间复杂度O（rd+n）,时间复杂度O（d（r+n））r代表关键字的基数，n代表关键字个数，d代表长度
         public static void RadixSort(int A[],int temp[],int n,int k,int r,int cnt[]){
 
             //A:原数组
