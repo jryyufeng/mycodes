@@ -124,7 +124,7 @@ public class try11 {
         //分小组，每个小组内有序，然后合并有序
         //这样通过先递归的分解数列，再合并数列就完成了归并排序
         //小组由小到大
-       //空间复杂度O（1）
+        //空间复杂度O（n）
         public static void merge(int[] a, int low, int mid, int high) {
             int[] temp = new int[high - low + 1];
             int i = low;// 左指针
