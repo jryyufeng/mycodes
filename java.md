@@ -1,7 +1,8 @@
 >**java面试总结1**
 > - **http://blog.csdn.net/u010601183/article/details/56496424**
-
+> - **http://blog.csdn.net/v_JULY_v/article/details/6105630**
 ---------
+
 ## java标识符
 * 1.长度：可以任意长度，但是JVM虚拟机规范中长度要求<=65535，这个长度仅限于空字符null以外的字符
 * 2.合法性：
